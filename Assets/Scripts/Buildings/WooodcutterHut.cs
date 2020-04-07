@@ -24,6 +24,7 @@ public class WooodcutterHut : RawProductionBuilding
             yield return null;
         }
         timeSinceLastProduction = 0f;
+        productionProgress = timeSinceLastProduction / productionTime;
         currentResources += producedResources;
     }
 
@@ -33,10 +34,11 @@ public class WooodcutterHut : RawProductionBuilding
         while (timeSinceLastPass < passProductTime)
         {
             timeSinceLastPass += Time.deltaTime;
-            passProgress = timeSinceLastProduction / productionTime;
+            passProgress = timeSinceLastPass / passProductTime;
             yield return null;
         }
         timeSinceLastPass = 0f;
+        passProgress = timeSinceLastPass / passProductTime;
         nextInChain.currentResources += producedResources;
     }
 
