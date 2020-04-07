@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class BuildManager : MonoBehaviour
 {
+    [Header("Building")]
     public static BuildManager instance;
     public List<Building> buildingPrefabs;
-    //public bool buildModeOn = false;
     public bool BuildModeOn { get; set; }
     Building buildingToBuild;
     public Tile tileToBuildOn;
+    [Header("Resources")]
+    public Resources playerResources;
 
     void Awake()
     {
@@ -37,10 +39,14 @@ public class BuildManager : MonoBehaviour
     {
         if (tile.Building == null && buildingToBuild != null && tile.tileType == buildingToBuild.tileType)
         {
-            Building newBuilding = Instantiate(buildingToBuild, tile.buildingHolder);
-            tile.Building = newBuilding;
-            newBuilding.tile = tile;
-            return true;
+            if (playerResources >= buildingToBuild.buildResources)
+            {
+                playerResources -= buildingToBuild.buildResources;
+                Building newBuilding = Instantiate(buildingToBuild, tile.buildingHolder);
+                tile.Building = newBuilding;
+                newBuilding.tile = tile;
+                return true;
+            }
         }
         return false;
     }

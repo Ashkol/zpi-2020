@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 1539464918141983156}
   - component: {fileID: 5726678002190483653}
   m_Layer: 5
-  m_Name: Building Description Panel
+  m_Name: Building Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

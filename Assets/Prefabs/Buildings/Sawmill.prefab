@@ -101,9 +101,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6659250107035498481}
-  - component: {fileID: 8117016738044441728}
+  - component: {fileID: -628794722475482814}
   m_Layer: 0
-  m_Name: Building003
+  m_Name: Sawmill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,7 +124,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8117016738044441728
+--- !u!114 &-628794722475482814
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,10 +133,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 8135059130229848657}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4b1ffa2e2ca69447a0d584c13043215, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d2c5f0f481616549ba6b5d7debfd25f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tile: {fileID: 0}
-  tileType: 1
-  description: {fileID: 11400000, guid: 48aa4e6563505a04a97ca7047c29e048, type: 2}
-  icon: {fileID: 21300000, guid: 6ca59154b64a4cb408194e94de8f0ea0, type: 3}
+  tileType: 0
+  description: {fileID: 11400000, guid: 330fca4fc0dd4934fb8803cc8eca9e11, type: 2}
+  buildResources: {fileID: 11400000, guid: b8927d68a81af4342b71ec4aa8465bdd, type: 2}
+  icon: {fileID: 21300000, guid: 3b54fe616bde06842b2901ec37a5a1b4, type: 3}
+  producedResources: {fileID: 11400000, guid: b391e14a622aea04fb83068a2d614367, type: 2}
+  productionTime: 10
+  productionOn: 0
+  passProductTime: 5
+  requiredResources: {fileID: 11400000, guid: e65eb9d162b80df418cfdec343cd53f0, type: 2}
+  currentResources: {fileID: 0}
+  nextInChain: {fileID: 0}
+  prevInChain: []

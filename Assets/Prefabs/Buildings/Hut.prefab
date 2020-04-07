@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1747926562957616290}
   - component: {fileID: 1570704229902700948}
   m_Layer: 0
-  m_Name: Building001
+  m_Name: Hut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,7 +47,8 @@ MonoBehaviour:
   tile: {fileID: 0}
   tileType: 0
   description: {fileID: 11400000, guid: f3a0da6108e4c314aa3d41e3cce9cb79, type: 2}
-  icon: {fileID: 21300000, guid: 11cccd67f6ddc114bb7e4d5b1b0a752b, type: 3}
+  buildResources: {fileID: 11400000, guid: b8927d68a81af4342b71ec4aa8465bdd, type: 2}
+  icon: {fileID: 21300000, guid: fbde584dd0752164a8239c90132a622a, type: 3}
 --- !u!1 &4707656643901301690
 GameObject:
   m_ObjectHideFlags: 0

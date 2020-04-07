@@ -25,7 +25,7 @@ public class Tile : MonoBehaviour, IPointerClickHandler
     [SerializeField] GameObject natureObject;
     [Tooltip("Type of the tile, more info about tile types in GDD")]
     public TileType tileType;
-    List<Tile> neighbours = new List<Tile>();
+    public List<Tile> neighbours = new List<Tile>();
 
     public enum TileType
     {
