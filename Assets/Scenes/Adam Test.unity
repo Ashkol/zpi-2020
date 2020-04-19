@@ -17482,7 +17482,7 @@ MonoBehaviour:
   - {fileID: 6274446685239944205, guid: c4c039cb3c435d64eaac07d9b123afe4, type: 3}
   - {fileID: 8117016738044441728, guid: 230e24254decb494ea456d86b17b180a, type: 3}
   tileToBuildOn: {fileID: 0}
-  playerResources: {fileID: 0}
+  playerResources: {fileID: 11400000, guid: c6d39bcadd3e9034fa01b9f12ce13289, type: 2}
 --- !u!4 &2129997897 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7659610554604287371, guid: 42376ddd0aa4ded48af924d25e6392ca,
@@ -17504,17 +17504,17 @@ PrefabInstance:
     - target: {fileID: 1406192902553625946, guid: 841220bf36f798d4ba312e5b3b053c8f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1406192902553625946, guid: 841220bf36f798d4ba312e5b3b053c8f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1406192902553625946, guid: 841220bf36f798d4ba312e5b3b053c8f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -40
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 1406192902553625946, guid: 841220bf36f798d4ba312e5b3b053c8f,
         type: 3}
