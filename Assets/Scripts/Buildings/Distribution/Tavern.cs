@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class Tavern : DistributionBuilding
 {
-    
+    public void AddResourcess(Resources newResources)
+    {
+        BuildManager.instance.playerResources += newResources;
+    }
 }
