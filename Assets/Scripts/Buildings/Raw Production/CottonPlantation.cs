@@ -5,7 +5,7 @@ using UnityEngine;
 public class CottonPlantation : RawProductionBuilding
 {
     [Header("Chain links")]
-    public Sawmill nextInChain;
+    public Spinning nextInChain;
 	
 	void Update()
     {
@@ -44,8 +44,8 @@ public class CottonPlantation : RawProductionBuilding
 	
 	public override bool CheckForNeighbouringBuildings()
     {
-        Debug.Log("Checks for Sawmill");
-        List<Sawmill> chainBuildings = GetNeighbouringBuildings<Sawmill>();
+        Debug.Log("Checks for Spinning");
+        List<Spinning> chainBuildings = GetNeighbouringBuildings<Spinning>();
         if (nextInChain == null && chainBuildings.Count >= 1)
         {
             Debug.Log(">= 1");

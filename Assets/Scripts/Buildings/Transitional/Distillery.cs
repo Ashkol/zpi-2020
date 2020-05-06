@@ -6,7 +6,7 @@ public class Distillery : TransitionalProductionBuilding
 {
     [Header("Chain links")]
     public Tavern nextInChain;
-    public List<WooodcutterHut> prevInChain = new List<WooodcutterHut>();
+    public List<Field> prevInChain = new List<Field>();
 	
 	void Update()
     {
@@ -61,11 +61,11 @@ public class Distillery : TransitionalProductionBuilding
                 return true;
             }
         }
-        prevInChain = GetNeighbouringBuildings<WooodcutterHut>();
+        prevInChain = GetNeighbouringBuildings<Field>();
 
-        foreach (WooodcutterHut prev in prevInChain)
+        foreach (Field prev in prevInChain)
         {
-            Debug.Log($"Checking for sawmills {prevInChain.Count}");
+            Debug.Log($"Checking for fields {prevInChain.Count}");
             prev.CheckForNeighbouringBuildings();
         }
 

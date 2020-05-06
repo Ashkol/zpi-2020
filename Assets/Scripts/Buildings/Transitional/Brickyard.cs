@@ -65,7 +65,7 @@ public class Brickyard : TransitionalProductionBuilding
 
         foreach (ClayMine prev in prevInChain)
         {
-            Debug.Log($"Checking for brickyards {prevInChain.Count}");
+            Debug.Log($"Checking for mines {prevInChain.Count}");
             prev.CheckForNeighbouringBuildings();
         }
 
