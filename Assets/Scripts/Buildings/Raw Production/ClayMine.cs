@@ -6,12 +6,13 @@ public class ClayMine : RawProductionBuilding
 {
     [Header("Chain links")]
     public Brickyard nextInChain;
+	public Potter alternativeChain;
 	
 	void Update()
     {
         if (timeSinceLastProduction == 0f && nextInChain)
             StartCoroutine(Produce());
-        if (currentResources.clay >= producedResources.clay && timeSinceLastPass == 0f && nextInChain)
+        if (currentResources.clay >= producedResources.clay && timeSinceLastPass == 0f && (nextInChain || alternativeChain))
             StartCoroutine(PassResources());
     }
 	
@@ -39,7 +40,8 @@ public class ClayMine : RawProductionBuilding
         }
         timeSinceLastPass = 0f;
         passProgress = timeSinceLastPass / passProductTime;
-        nextInChain.currentResources += producedResources;
+        if(nextInChain) nextInChain.currentResources += producedResources;
+		if(alternativeChain) alternativeChain.currentResources += producedResources;
     }
 
     public override bool CheckForNeighbouringBuildings()
@@ -50,9 +52,18 @@ public class ClayMine : RawProductionBuilding
         {
             Debug.Log(">= 1");
             nextInChain = chainBuildings[0];
-            return true;
+            
         }
 
-        return false;
+		Debug.Log("Checks for Potter");
+        List<Potter> chainBuildings2 = GetNeighbouringBuildings<Potter>();
+        if (alternativeChain == null && chainBuildings2.Count >= 1)
+        {
+            Debug.Log(">= 1");
+            alternativeChain = chainBuildings2[0];
+            
+        }
+		
+        return (nextInChain == null && chainBuildings.Count >= 1) || (alternativeChain == null && chainBuildings2.Count >= 1); 
     }
 }
