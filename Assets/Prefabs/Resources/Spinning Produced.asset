@@ -9,8 +9,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fd39ef929877fc46ba2d08ae14a191e, type: 3}
-  m_Name: Stone Mine
+  m_Script: {fileID: 11500000, guid: 3b2a2620fe588f044940bbf5716ae9ba, type: 3}
+  m_Name: Spinning Produced
   m_EditorClassIdentifier: 
-  name: Stone Mine
-  description: To be a rock and not to roll.
+  wood: 0
+  stone: 0
+  clay: 0
+  meat: 0
+  grain: 0
+  fish: 0
+  cotton: 0
+  boards: 0
+  bricks: 0
+  wieners: 0
+  wine: 0
+  bread: 0
+  vodka: 0
+  clothes: 1
+  pottery: 0
+  flour: 0
