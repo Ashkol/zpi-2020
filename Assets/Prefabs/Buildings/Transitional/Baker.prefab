@@ -101,9 +101,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6659250107035498481}
-  - component: {fileID: 7260739401751590339}
+  - component: {fileID: 8515002179652659657}
   m_Layer: 0
-  m_Name: Brickyard
+  m_Name: Baker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,7 +124,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7260739401751590339
+--- !u!114 &8515002179652659657
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,20 +133,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 8135059130229848657}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43c6b16ca6e8d5b46b5d684be43caf90, type: 3}
+  m_Script: {fileID: 11500000, guid: 297b2bd8aa77feb49bb8dabfcfa82664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tile: {fileID: 0}
   tileType: 0
-  icon: {fileID: 21300000, guid: 5544a3e3bf2f3704abadb03c6d33117f, type: 3}
-  description: {fileID: 11400000, guid: 98ad8560156458042a2d500fd0d58509, type: 2}
+  icon: {fileID: 21300000, guid: 435ea295a7d3657429bb5c888d95f4a2, type: 3}
+  description: {fileID: 11400000, guid: 4e1a110da9e91074fbe0444613a187f2, type: 2}
   buildResources: {fileID: 11400000, guid: b8927d68a81af4342b71ec4aa8465bdd, type: 2}
   currentResources: {fileID: 0}
-  producedResources: {fileID: 11400000, guid: 577944c4265a901409ce3e117a987516, type: 2}
+  producedResources: {fileID: 11400000, guid: 014bbc13f5728c84e92f832e27ae6b13, type: 2}
   productionTime: 10
   productionProgress: 0
   passProductTime: 5
   passProgress: 0
-  requiredResources: {fileID: 11400000, guid: 5b27f6c9d9041bc4481228b46d1fba7d, type: 2}
+  requiredResources: {fileID: 11400000, guid: d1dbd0f2c46735d41a4d5d950c64d004, type: 2}
   nextInChain: {fileID: 0}
   prevInChain: []

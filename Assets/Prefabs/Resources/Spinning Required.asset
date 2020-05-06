@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b2a2620fe588f044940bbf5716ae9ba, type: 3}
-  m_Name: Brickyard Required 2
+  m_Name: Spinning Required
   m_EditorClassIdentifier: 
   wood: 0
   stone: 0
-  clay: 2
+  clay: 0
   meat: 0
   grain: 0
   fish: 0
-  cotton: 0
+  cotton: 2
   boards: 0
   bricks: 0
   wieners: 0
