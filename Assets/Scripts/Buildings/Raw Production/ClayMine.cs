@@ -10,7 +10,7 @@ public class ClayMine : RawProductionBuilding
 	
 	void Update()
     {
-        if (timeSinceLastProduction == 0f && nextInChain)
+        if (timeSinceLastProduction == 0f && (nextInChain || alternativeChain))
             StartCoroutine(Produce());
         if (currentResources.clay >= producedResources.clay && timeSinceLastPass == 0f && (nextInChain || alternativeChain))
             StartCoroutine(PassResources());

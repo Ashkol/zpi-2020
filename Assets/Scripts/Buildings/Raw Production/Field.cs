@@ -10,7 +10,7 @@ public class Field : RawProductionBuilding
 	
 	void Update()
     {
-        if (timeSinceLastProduction == 0f && nextInChain)
+        if (timeSinceLastProduction == 0f && (nextInChain || alternativeChain))
             StartCoroutine(Produce());
         if (currentResources.grain >= producedResources.grain && timeSinceLastPass == 0f && (nextInChain || alternativeChain))
             StartCoroutine(PassResources());
