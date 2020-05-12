@@ -12,8 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b2a2620fe588f044940bbf5716ae9ba, type: 3}
   m_Name: Starting Resources
   m_EditorClassIdentifier: 
-  boards: 500
   wood: 0
   stone: 500
   clay: 0
+  meat: 0
+  grain: 0
+  fish: 0
+  cotton: 0
+  boards: 500
   bricks: 500
+  wieners: 0
+  wine: 0
+  bread: 0
+  vodka: 0
+  clothes: 0
+  pottery: 0
+  flour: 0
