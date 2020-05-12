@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Market : DistributionBuilding
 {
-   public void AddResourcess(Resources newResources)
-   {
-        BuildManager.instance.playerResources += newResources;
-   }
+	private Resources tempResources;
+	
+	public void AddResourcess(Resources newResources)
+	{
+		BuildManager.instance.playerResources += newResources;
+	}
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Nets : RawProductionBuilding
 {
     [Header("Chain links")]
-    public Storehouse nextInChain;
+    public Market nextInChain;
 	
 	void Update()
     {
@@ -30,7 +30,7 @@ public class Nets : RawProductionBuilding
 
     IEnumerator PassResources()
     {
-        Debug.Log("Passing resources nets -> storehouse");
+        Debug.Log("Passing resources nets -> market");
         currentResources -= producedResources;
         while (timeSinceLastPass < passProductTime)
         {
@@ -45,8 +45,8 @@ public class Nets : RawProductionBuilding
 
     public override bool CheckForNeighbouringBuildings()
     {
-        Debug.Log("Checks for Storehouse");
-        List<Storehouse> chainBuildings = GetNeighbouringBuildings<Storehouse>();
+        Debug.Log("Checks for market");
+        List<Market> chainBuildings = GetNeighbouringBuildings<Market>();
         if (nextInChain == null && chainBuildings.Count >= 1)
         {
             Debug.Log(">= 1");
