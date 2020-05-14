@@ -43,5 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3185d5c3e01d0d34994b9a3eae7cdb1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Camera: {fileID: 0}
+  cam: {fileID: 0}
   Rotate: 0
+  minBorder: {x: 0, y: 0, z: 0}
+  maxBorder: {x: 0, y: 0, z: 0}
