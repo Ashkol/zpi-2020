@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Starting Resources
   m_EditorClassIdentifier: 
   wood: 0
-  stone: 500
+  stone: 1000
   clay: 0
   meat: 0
   grain: 0
   fish: 0
   cotton: 0
-  boards: 500
-  bricks: 500
+  boards: 1000
+  bricks: 1000
   wieners: 0
   wine: 0
   bread: 0
