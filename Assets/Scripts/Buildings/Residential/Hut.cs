@@ -9,4 +9,20 @@ public class Hut : ResidentialBuilding
 		//1 type of food
 		return false;
 	}
+	
+	void Update()
+   {
+		if(conditionsMet() && timeFromLastGain < 0f) 
+		{
+			gainResidents();			
+		}
+		else if(!conditionsMet())
+		{
+			loseResidents();
+		}
+		else
+		{
+			timeFromLastGain -= Time.deltaTime;
+		}
+   }	
 }

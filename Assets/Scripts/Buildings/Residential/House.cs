@@ -9,4 +9,20 @@ public class House : ResidentialBuilding
 		//2 types of food, 1 type of alcohol, 1 type of luxury good
 		return false;
    }
+   
+   void Update()
+   {
+		if(conditionsMet() && timeFromLastGain < 0f) 
+		{
+			gainResidents();			
+		}
+		else if(!conditionsMet())
+		{
+			loseResidents();
+		}
+		else
+		{
+			timeFromLastGain -= Time.deltaTime;
+		}
+   }	
 }
