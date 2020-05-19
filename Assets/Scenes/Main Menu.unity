@@ -1409,10 +1409,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2397996973257786244, guid: 7591c46901111cd41b658fcf5cbcbb4f,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 7591c46901111cd41b658fcf5cbcbb4f,
         type: 3}
       propertyPath: m_Name
       value: mill_wings
+      objectReference: {fileID: 0}
+    - target: {fileID: 608615394619914483, guid: 7591c46901111cd41b658fcf5cbcbb4f,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1066910053003865102, guid: 7591c46901111cd41b658fcf5cbcbb4f,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3014614768876417435, guid: 7591c46901111cd41b658fcf5cbcbb4f,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5490870052100550915, guid: 7591c46901111cd41b658fcf5cbcbb4f,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7591c46901111cd41b658fcf5cbcbb4f, type: 3}
@@ -2531,6 +2556,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6385068024630362819, guid: 9d8c53642ecc31d43bdaabc528c73e33,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d8c53642ecc31d43bdaabc528c73e33, type: 3}
 --- !u!1 &526516409
@@ -3101,7 +3131,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -3405,6 +3435,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 533695807}
     m_Modifications:
+    - target: {fileID: -6346951503343937774, guid: 9a6e425f983b9884aa93c339d6ec38a2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 284290793868584455, guid: 9a6e425f983b9884aa93c339d6ec38a2,
         type: 3}
       propertyPath: m_CastShadows
@@ -5503,6 +5538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9cc4a5896740654dbabaa0d6b9b6a7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationTime: 20
 --- !u!1001 &1643702803
 PrefabInstance:
   m_ObjectHideFlags: 0
