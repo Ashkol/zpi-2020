@@ -4,4 +4,5 @@ using UnityEngine;
 
 public class RawProductionBuilding : ProductionBuilding
 {
+    public Carrier carrier;
 }

@@ -6,10 +6,16 @@ public class Building : MonoBehaviour
 {
     public Tile tile;
     public Tile.TileType tileType;
+
+    [Header("Surrounding")]
+    [SerializeField] private Transform entrance;
+    public Transform Entrance { private set { entrance = value; }  get { return entrance; } }
+
     [Header("Info")]
     public Sprite icon;
     public BuildingDescription description;
     public Resources buildResources;
+    
 
 
     void Start()

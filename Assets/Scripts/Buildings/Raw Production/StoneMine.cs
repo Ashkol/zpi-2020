@@ -6,8 +6,13 @@ public class StoneMine : RawProductionBuilding
 {
     [Header("Chain links")]
     public Storehouse nextInChain;
-	
-	void Update()
+
+    protected override void Start()
+    {
+        base.Start();
+        AssignCarrierDestination();
+    }
+    void Update()
     {
         if (timeSinceLastProduction == 0f && nextInChain)
             StartCoroutine(Produce());
@@ -30,6 +35,7 @@ public class StoneMine : RawProductionBuilding
 
     IEnumerator PassResources()
     {
+        carrier.MoveToDestination(passProductTime);
         Debug.Log("Passing resources stone mine -> storehouse");
         currentResources -= producedResources;
         while (timeSinceLastPass < passProductTime)
@@ -51,9 +57,18 @@ public class StoneMine : RawProductionBuilding
         {
             Debug.Log(">= 1");
             nextInChain = chainBuildings[0];
+            AssignCarrierDestination();
             return true;
         }
 
         return false;
+    }
+
+    private void AssignCarrierDestination()
+    {
+        if (carrier.destinationBuilding == null)
+        {
+            carrier.destinationBuilding = nextInChain;
+        }
     }
 }

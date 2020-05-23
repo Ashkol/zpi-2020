@@ -8,6 +8,12 @@ public class Sawmill : TransitionalProductionBuilding
     public Storehouse nextInChain;
     public List<WooodcutterHut> prevInChain = new List<WooodcutterHut>();
 
+    protected override void Start()
+    {
+        base.Start();
+        AssignCarrierDestination();
+    }
+
     void Update()
     {
         if (requiredResources <= currentResources && timeSinceLastProduction == 0f)
@@ -23,6 +29,7 @@ public class Sawmill : TransitionalProductionBuilding
 
     IEnumerator Produce()
     {
+        carrier.MoveToDestination(passProductTime);
         currentResources -= requiredResources;
         while (timeSinceLastProduction < productionTime)
         {
@@ -43,6 +50,7 @@ public class Sawmill : TransitionalProductionBuilding
         {
             timeSinceLastPass += Time.deltaTime;
             passProgress = timeSinceLastPass / passProductTime;
+            AssignCarrierDestination();
             yield return null;
         }
         timeSinceLastPass = 0f;
@@ -70,5 +78,13 @@ public class Sawmill : TransitionalProductionBuilding
         }
 
         return false;
+    }
+
+    private void AssignCarrierDestination()
+    {
+        if (carrier.destinationBuilding == null)
+        {
+            carrier.destinationBuilding = nextInChain;
+        }
     }
 }
