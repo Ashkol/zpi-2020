@@ -15,8 +15,7 @@ public class Building : MonoBehaviour
     public Sprite icon;
     public BuildingDescription description;
     public Resources buildResources;
-    
-
+    [SerializeField] BuildingPanel buildingPanel;
 
     void Start()
     {
