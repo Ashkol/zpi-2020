@@ -41,6 +41,7 @@ public class BuildManager : MonoBehaviour
         {
             if (playerResources >= buildingToBuild.buildResources)
             {
+                PlayBuildingSound();
                 playerResources -= buildingToBuild.buildResources;
                 Building newBuilding = Instantiate(buildingToBuild, tile.buildingHolder);
                 tile.Building = newBuilding;
@@ -66,5 +67,17 @@ public class BuildManager : MonoBehaviour
             //BuildPanel.instance.gameObject.SetActive(false);
             BuildPanel.instance.Hide();
         }
+    }
+
+    private void PlayBuildingSound()
+    {
+        var sfxPlayer = GameObject.Find("Building SFX");
+        if (sfxPlayer != null)
+        {
+            var audio = sfxPlayer.GetComponent<AudioSource>();
+            if (audio != null)
+                audio.Play();
+        }
+        
     }
 }
