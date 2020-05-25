@@ -6,7 +6,14 @@ public class House : ResidentialBuilding
 {
    private bool conditionsMet()
    {
-		//2 types of food, 1 type of alcohol, 1 type of luxury good
+		foreach(DistributionBuilding db in prevInChain)
+		{
+			if(((db.getResources().fish > 0 && db.getResources().bread > 0) || 
+					(db.getResources().fish > 0 && db.getResources().wieners > 0) || 
+						(db.getResources().bread > 0 && db.getResources().wieners > 0)) && 
+							(db.getResources().clothes > 0 || db.getResources().pottery > 0)) return true;
+		}
+		
 		return false;
    }
    

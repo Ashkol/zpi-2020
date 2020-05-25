@@ -23,11 +23,11 @@ public class Building : MonoBehaviour
     public List<T> GetNeighbouringBuildings<T>()
     {
         List<T> buildings = new List<T>();
-        foreach (Tile tile in tile.neighbours)
+        foreach (Tile tile1 in tile.neighbours)
         {
-            if (tile.Building != null)
+            if (tile1.Building != null)
             {
-                if (tile.Building.TryGetComponent(out T building))
+                if (tile1.Building.TryGetComponent(out T building))
                 {
                     buildings.Add(building);
                 }
