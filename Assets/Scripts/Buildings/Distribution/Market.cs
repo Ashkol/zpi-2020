@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Market : DistributionBuilding
 {	
+
+	void Start()
+    {
+        resourcesOnMarket = (Resources)ScriptableObject.CreateInstance(typeof(Resources));
+		lastResources = (Resources)ScriptableObject.CreateInstance(typeof(Resources));
+    }
+	
 	void Update()
    {
 		if(timeFromLastCheck < 0f) 
