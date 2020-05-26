@@ -4,5 +4,29 @@ using UnityEngine;
 
 public class Hut : ResidentialBuilding
 {
-    
+	private bool conditionsMet()
+	{
+		foreach(DistributionBuilding db in prevInChain)
+		{
+			if(db.getResources().fish > 0 || db.getResources().bread > 0 || db.getResources().wieners > 0) return true;
+		}
+		
+		return false;
+	}
+	
+	void Update()
+   {
+		if(conditionsMet() && timeFromLastGain < 0f) 
+		{
+			gainResidents();			
+		}
+		else if(!conditionsMet())
+		{
+			loseResidents();
+		}
+		else
+		{
+			timeFromLastGain -= Time.deltaTime;
+		}
+   }	
 }

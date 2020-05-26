@@ -5,7 +5,7 @@ using UnityEngine;
 public class Storehouse : DistributionBuilding
 {
     // Adds resources to player's resources pool
-    public void AddResourcess(Resources newResources)
+    public new void AddResourcess(Resources newResources)
     {
         BuildManager.instance.playerResources += newResources;
     }
