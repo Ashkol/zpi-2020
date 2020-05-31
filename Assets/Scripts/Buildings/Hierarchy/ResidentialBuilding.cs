@@ -61,4 +61,9 @@ public class ResidentialBuilding : Building
         }
         return buildings;
     }
+	
+	public int getResidents(){
+	
+		return residentsNumber;
+	}
 }

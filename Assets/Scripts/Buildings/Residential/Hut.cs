@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Hut : ResidentialBuilding
 {
+	void Start()
+	{
+		Harbour.AddToPool(this);
+	}
+	
 	private bool conditionsMet()
 	{
 		foreach(DistributionBuilding db in prevInChain)
