@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1747926562957616290}
-  - component: {fileID: 1170110618292355124}
+  - component: {fileID: 6300544723683889039}
   m_Layer: 0
-  m_Name: Hut
+  m_Name: RichHouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1170110618292355124
+--- !u!114 &6300544723683889039
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,14 +41,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1019406226961111683}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53a310a9c05d6f64d933c9a4fd5d3c75, type: 3}
+  m_Script: {fileID: 11500000, guid: 7f2636360512dd94f849c9868a364e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tile: {fileID: 0}
   tileType: 0
-  icon: {fileID: 21300000, guid: dc2b6496e2d7863419f9ed627ad0127d, type: 3}
-  description: {fileID: 11400000, guid: f3a0da6108e4c314aa3d41e3cce9cb79, type: 2}
-  buildResources: {fileID: 11400000, guid: b8927d68a81af4342b71ec4aa8465bdd, type: 2}
+  icon: {fileID: 21300000, guid: 63fb315f009cb1841ab46d718dd29815, type: 3}
+  description: {fileID: 11400000, guid: 54eb30b54be8a704c8a6f6643c727cde, type: 2}
+  buildResources: {fileID: 11400000, guid: 9249efc87881bb94e97efb17909ea4ab, type: 2}
   rasidentsMax: 5
   timeToGain: 5
   prevInChain: []
