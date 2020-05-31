@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1fd39ef929877fc46ba2d08ae14a191e, type: 3}
-  m_Name: Hut 1
+  m_Name: House
   m_EditorClassIdentifier: 
-  name: Hut
-  description: Like a house, only worse.
+  name: House
+  description: Like a hut, only better.
