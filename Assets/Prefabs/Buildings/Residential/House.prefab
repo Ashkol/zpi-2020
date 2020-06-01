@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1747926562957616290}
-  - component: {fileID: 1170110618292355124}
+  - component: {fileID: 6778977976482210652}
   m_Layer: 0
-  m_Name: Hut
+  m_Name: House
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1170110618292355124
+--- !u!114 &6778977976482210652
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,14 +41,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1019406226961111683}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53a310a9c05d6f64d933c9a4fd5d3c75, type: 3}
+  m_Script: {fileID: 11500000, guid: 7fcebb3c30bed4a41832f84df733d2f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tile: {fileID: 0}
   tileType: 0
-  icon: {fileID: 21300000, guid: fbde584dd0752164a8239c90132a622a, type: 3}
-  description: {fileID: 11400000, guid: f3a0da6108e4c314aa3d41e3cce9cb79, type: 2}
-  buildResources: {fileID: 11400000, guid: b8927d68a81af4342b71ec4aa8465bdd, type: 2}
+  icon: {fileID: 21300000, guid: 11cccd67f6ddc114bb7e4d5b1b0a752b, type: 3}
+  description: {fileID: 11400000, guid: 7661f47d7ce50214b80cbfcfb64c4608, type: 2}
+  buildResources: {fileID: 11400000, guid: b3267f3cdaf9a014bade4c845207ebf6, type: 2}
   rasidentsMax: 5
   timeToGain: 5
   prevInChain: []
