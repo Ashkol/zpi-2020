@@ -7,7 +7,7 @@ public class BuildingPanel : MonoBehaviour
     Building building;
     RectTransform rectTransform;
 
-    public Building Building
+    public virtual Building Building
     {
         get { return building; }
         set
@@ -30,17 +30,20 @@ public class BuildingPanel : MonoBehaviour
 
     protected virtual void Start()
     {
-        rectTransform.localScale = Vector3.zero;
+        rectTransform.localScale = Vector3.one;
+        Close();
     }
 
     public void Close()
     {
-        LeanTween.scale(gameObject, Vector3.zero, 0.3f).setDestroyOnComplete(false);
+        //LeanTween.scale(gameObject, Vector3.zero, 0.3f).setDestroyOnComplete(false);
+        LeanTween.moveLocalX(gameObject, Screen.currentResolution.width -550, 0.3f).setDestroyOnComplete(false);
     }
 
     public void Open()
     {
-        LeanTween.scale(gameObject, Vector3.one, 0.3f).setDestroyOnComplete(false);
+        //LeanTween.scale(gameObject, Vector3.one, 0.3f).setDestroyOnComplete(false);
+        LeanTween.moveX(gameObject, Screen.currentResolution.width, 0.3f).setDestroyOnComplete(false);
     }
 
 }

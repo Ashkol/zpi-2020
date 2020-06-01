@@ -18,23 +18,23 @@ public class ClayMine : RawProductionBuilding
     void Update()
     {
         if (timeSinceLastProduction == 0f && (nextInChain || alternativeChain))
-            StartCoroutine(Produce());
+            StartCoroutine(base.Produce());
         if (currentResources.clay >= producedResources.clay && timeSinceLastPass == 0f && (nextInChain || alternativeChain))
             StartCoroutine(PassResources());
     }
 	
-	IEnumerator Produce()
-    {
-        while(timeSinceLastProduction < productionTime)
-        {
-            timeSinceLastProduction += Time.deltaTime;
-            productionProgress = timeSinceLastProduction / productionTime;
-            yield return null;
-        }
-        timeSinceLastProduction = 0f;
-        productionProgress = timeSinceLastProduction / productionTime;
-        currentResources += producedResources;
-    }
+	//IEnumerator Produce()
+ //   {
+ //       while(timeSinceLastProduction < productionTime)
+ //       {
+ //           timeSinceLastProduction += Time.deltaTime;
+ //           productionProgress = timeSinceLastProduction / productionTime;
+ //           yield return null;
+ //       }
+ //       timeSinceLastProduction = 0f;
+ //       productionProgress = timeSinceLastProduction / productionTime;
+ //       currentResources += producedResources;
+ //   }
 
     IEnumerator PassResources()
     {

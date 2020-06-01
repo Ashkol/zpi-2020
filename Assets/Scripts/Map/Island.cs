@@ -14,13 +14,40 @@ public class Island : MonoBehaviour
     {
         tiles = new List<Tile>(GetComponentsInChildren<Tile>());
         RiseAboveBoard();
-        DropTiles();
+        DropTiles(true);
+    }
+
+    public void RiseTilesAboveBoard(System.Func<Tile, bool> predicament)
+    {
+        float localY;
+        foreach (Tile t in tiles)
+        {
+            if (predicament(t))
+            {
+                localY = t.transform.localPosition.y;
+                LeanTween.moveLocalY(t.gameObject, 2f, 0.5f);
+                t.Rised = true;
+            }
+        }
+    }
+
+    public void DropTiles(System.Func<Tile, bool> predicament)
+    {
+        foreach (var t in tiles)
+        {
+            if (predicament(t))
+            {
+                LeanTween.moveLocalY(t.gameObject, 0, fallTime);
+                t.Rised = false;
+            }
+        }
     }
 
     IEnumerator Drop(Tile tile, float time)
     {   
         yield return new WaitForSeconds(time);
         LeanTween.moveLocalY(tile.gameObject, 0, fallTime);
+        tile.Rised = false;
     }
 
     private void RiseAboveBoard()
@@ -31,16 +58,19 @@ public class Island : MonoBehaviour
             float localY = tile.natureHolder.localPosition.y;
             tile.natureHolder.localPosition -= Vector3.up * 10f;
             LeanTween.moveLocalY(tile.natureHolder.gameObject, localY, 1f).setDelay((tiles.Count * dropDelayTime + fallTime));
-
+            tile.Rised = true;
         }
     }
 
-    private void DropTiles()
+    private void DropTiles(bool oneByOne = false)
     {
         float time = 0f;
         foreach (var tile in tiles)
         {
-            StartCoroutine(Drop(tile, time));
+            if (!oneByOne)
+                time = 0;
+            if (tile.Rised)
+                StartCoroutine(Drop(tile, time));
             time += dropDelayTime;
         }
     }

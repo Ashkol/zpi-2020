@@ -16,23 +16,25 @@ public class WooodcutterHut : RawProductionBuilding
     void Update()
     {
         if (timeSinceLastProduction == 0f && nextInChain)
-            StartCoroutine(Produce());
+            StartCoroutine(base.Produce());
         if (currentResources.wood >= producedResources.wood && timeSinceLastPass == 0f && nextInChain)
             StartCoroutine(PassResources());
     }
 
-    IEnumerator Produce()
-    {
-        while(timeSinceLastProduction < productionTime)
-        {
-            timeSinceLastProduction += Time.deltaTime;
-            productionProgress = timeSinceLastProduction / productionTime;
-            yield return null;
-        }
-        timeSinceLastProduction = 0f;
-        productionProgress = timeSinceLastProduction / productionTime;
-        currentResources += producedResources;
-    }
+    //IEnumerator Produce()
+    //{
+    //    while(timeSinceLastProduction < productionTime)
+    //    {
+    //        timeSinceLastProduction += Time.deltaTime;
+    //        productionProgress = timeSinceLastProduction / productionTime;
+    //        OnProductionProgress.Invoke();
+    //        yield return null;
+    //    }
+    //    timeSinceLastProduction = 0f;
+    //    productionProgress = timeSinceLastProduction / productionTime;
+    //    currentResources += producedResources;
+    //    OnProductionProgress.Invoke();
+    //}
 
     IEnumerator PassResources()
     {

@@ -7,6 +7,7 @@ public class BuildManager : MonoBehaviour
     [Header("Building")]
     public static BuildManager instance;
     public List<Building> buildingPrefabs;
+    public Island island, sea;
     public bool BuildModeOn { get; set; }
     Building buildingToBuild;
     public Tile tileToBuildOn;
@@ -32,7 +33,12 @@ public class BuildManager : MonoBehaviour
 
     public void SetBuildingToBuild(Building building)
     {
-        buildingToBuild = building;
+        if (building != buildingToBuild)
+        {
+            buildingToBuild = building;
+            island.DropTiles((Tile tile) => tile.tileType != buildingToBuild.tileType && tile.Rised);
+            island.RiseTilesAboveBoard((Tile tile) => tile.tileType == buildingToBuild.tileType && tile.Building == null && !tile.Rised);
+        }
     }
 
     public bool Build(Tile tile)
@@ -46,9 +52,13 @@ public class BuildManager : MonoBehaviour
                 Building newBuilding = Instantiate(buildingToBuild, tile.buildingHolder);
                 tile.Building = newBuilding;
                 newBuilding.tile = tile;
+                BuildModeOn = false;
+                island.DropTiles((Tile t) => true);
                 return true;
             }
+
         }
+        BuildModeOn = false;
         return false;
     }
 
@@ -78,6 +88,6 @@ public class BuildManager : MonoBehaviour
             if (audio != null)
                 audio.Play();
         }
-        
+
     }
 }

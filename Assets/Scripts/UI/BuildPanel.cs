@@ -5,18 +5,22 @@ using UnityEngine;
 public class BuildPanel : MonoBehaviour
 {
     public static BuildPanel instance;
-    RectTransform rectTransform;
+    protected RectTransform rectTransform;
     public BuildingDescPanel buildingDescPanelPrefab;
-    BuildingDescPanel activeBuildingDescPanel;
+    protected BuildingDescPanel activeBuildingDescPanel;
+    public bool hideOnStart = true;
 
     void Awake()
     {
         instance = this;
         rectTransform = GetComponent<RectTransform>();
-        rectTransform.localScale = new Vector3(0, 0, 0);
+        if (hideOnStart)
+        {
+            rectTransform.localScale = new Vector3(0, 0, 0);
+        }
     }
 
-    public void Show(Tile tile)
+    public virtual void Show(Tile tile)
     {
         LeanTween.scale(rectTransform, Vector3.one, 0.5f);
         foreach(BuildIcon icon in GetComponentsInChildren<BuildIcon>())
@@ -25,7 +29,7 @@ public class BuildPanel : MonoBehaviour
         }
     }
 
-    public void Hide()
+    public virtual void Hide()
     {
 
         LeanTween.scale(rectTransform, Vector3.zero, 0.5f);
@@ -33,7 +37,18 @@ public class BuildPanel : MonoBehaviour
             LeanTween.scale(activeBuildingDescPanel.gameObject, Vector3.zero, 0.3f).setDestroyOnComplete(true);
     }
 
-    public void ShowBuildingInfo(Building building)
+    public virtual void ShowBuildingInfo(Building building)
+    {
+        if (activeBuildingDescPanel != null)
+            LeanTween.moveLocalX(activeBuildingDescPanel.gameObject, 0, 0.3f).setDestroyOnComplete(true);
+
+        activeBuildingDescPanel = Instantiate(buildingDescPanelPrefab, transform.parent);
+        transform.SetAsLastSibling();
+        activeBuildingDescPanel.BuildingDesc = building.description;
+        LeanTween.moveLocalX(activeBuildingDescPanel.gameObject, -400, 0.3f);
+    }
+
+    public virtual void ShowBuildingInfo(Building building, Vector3 position)
     {
         if (activeBuildingDescPanel != null)
             LeanTween.moveLocalX(activeBuildingDescPanel.gameObject, 0, 0.3f).setDestroyOnComplete(true);

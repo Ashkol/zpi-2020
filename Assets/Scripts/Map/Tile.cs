@@ -6,6 +6,7 @@ public class Tile : MonoBehaviour, IPointerClickHandler
 {
     // Holders for building and nature objects, so they can be placed in right place from the script
     public Transform buildingHolder;
+    public bool Rised { get; set; } = true;
     [SerializeField] Building building;
     public Building Building
     {
@@ -39,12 +40,19 @@ public class Tile : MonoBehaviour, IPointerClickHandler
     {
         // Here Build Manager methods may be handled, ex. if the tile is clicked when the building mode is active -> build building here
         //BuildPanel.instance.gameObject.SetActive(true);
-        if (BuildManager.instance != null && building == null)
+        if (BuildManager.instance != null && building == null && BuildManager.instance.BuildModeOn == false)
         {
-            BuildManager.instance.BuildModeOn = true;
-            BuildManager.instance.SetBuildingToBuild(-1);
+            //BuildManager.instance.BuildModeOn = true;
+            //BuildManager.instance.SetBuildingToBuild(-1);
+            //BuildManager.instance.tileToBuildOn = this;
+            //BuildPanel.instance.Show(this);
+        }
+        // Desktop version
+        else if (BuildManager.instance != null && building == null && BuildManager.instance.BuildModeOn)
+        {
             BuildManager.instance.tileToBuildOn = this;
-            BuildPanel.instance.Show(this);
+            BuildManager.instance.Build();
+            BuildManager.instance.SetBuildingToBuild(null);
         }
         else if (building != null)
         {

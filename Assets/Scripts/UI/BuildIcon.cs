@@ -9,6 +9,8 @@ public class BuildIcon : MonoBehaviour
     Toggle toggle;
     public Building building;
     BuildPanel buildPanel;
+    public BuildingDescPanel buildingDescPanelPrefab;
+    BuildingDescPanel activeBuildingDescPanel;
 
 
     void Start()
@@ -35,8 +37,23 @@ public class BuildIcon : MonoBehaviour
     {
         Debug.Log(building.name);
         buildPanel = GetComponentInParent<BuildPanel>();
-        buildPanel.ShowBuildingInfo(building);
+        buildPanel.ShowBuildingInfo(building, GetComponent<RectTransform>().position);
         BuildManager.instance.SetBuildingToBuild(building);
+        BuildManager.instance.BuildModeOn = true;
 
+    }
+
+    public void ShowBuildingInfo()
+    {
+        activeBuildingDescPanel = Instantiate(buildingDescPanelPrefab, transform);
+        //activeBuildingDescPanel.GetComponent<RectTransform>().localPosition = transform.position + Vector3.left * 1000f;
+        activeBuildingDescPanel.BuildingDesc = building.description;
+        //LeanTween.moveLocalY(activeBuildingDescPanel.gameObject, 100, 0.3f);
+    }
+
+    public void HideBuildingInfo()
+    {
+        if (activeBuildingDescPanel != null)
+            Destroy(activeBuildingDescPanel.gameObject);
     }
 }

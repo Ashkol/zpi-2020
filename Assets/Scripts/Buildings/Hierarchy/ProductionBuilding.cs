@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ProductionBuilding : Building
 {
@@ -15,10 +16,12 @@ public class ProductionBuilding : Building
     public float passProductTime;
     protected float timeSinceLastPass = 0;
     public float passProgress = 0;
+    public UnityEvent OnFinishProduction;
+    public UnityEvent OnProductionProgress;
 
     protected virtual void Start()
     {
-        Debug.Log("Production BUildings");
+        Debug.Log("Production Buildings");
         currentResources = (Resources)ScriptableObject.CreateInstance(typeof(Resources));
         CheckForNeighbouringBuildings();
     }
