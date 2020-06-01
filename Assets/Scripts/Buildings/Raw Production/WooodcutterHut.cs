@@ -7,6 +7,12 @@ public class WooodcutterHut : RawProductionBuilding
     [Header("Chain links")]
     public Sawmill nextInChain;
 
+    protected override void Start()
+    {
+        base.Start();
+        AssignCarrierDestination();
+    }
+
     void Update()
     {
         if (timeSinceLastProduction == 0f && nextInChain)
@@ -30,6 +36,7 @@ public class WooodcutterHut : RawProductionBuilding
 
     IEnumerator PassResources()
     {
+        carrier.MoveToDestination(passProductTime);
         currentResources -= producedResources;
         while (timeSinceLastPass < passProductTime)
         {
@@ -50,9 +57,18 @@ public class WooodcutterHut : RawProductionBuilding
         {
             Debug.Log(">= 1");
             nextInChain = chainBuildings[0];
+            AssignCarrierDestination();
             return true;
         }
 
         return false;
+    }
+
+    private void AssignCarrierDestination()
+    {
+        if (carrier.destinationBuilding == null)
+        {
+            carrier.destinationBuilding = nextInChain;
+        }
     }
 }

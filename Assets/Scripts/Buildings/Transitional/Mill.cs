@@ -7,8 +7,14 @@ public class Mill : TransitionalProductionBuilding
     [Header("Chain links")]
     public Baker nextInChain;
     public List<Field> prevInChain = new List<Field>();
-    
-	void Update()
+
+    protected override void Start()
+    {
+        base.Start();
+        AssignCarrierDestination();
+    }
+
+    void Update()
     {
         if (requiredResources <= currentResources && timeSinceLastProduction == 0f)
         {
@@ -37,6 +43,7 @@ public class Mill : TransitionalProductionBuilding
 
     IEnumerator PassResources()
     {
+        carrier.MoveToDestination(passProductTime);
         currentResources -= producedResources;
         while (timeSinceLastPass < passProductTime)
         {
@@ -57,6 +64,7 @@ public class Mill : TransitionalProductionBuilding
             if (nextInChain == null && chainBuildings.Count >= 1)
             {
                 nextInChain = chainBuildings[0];
+                AssignCarrierDestination();
                 return true;
             }
         }
@@ -69,5 +77,13 @@ public class Mill : TransitionalProductionBuilding
         }
 
         return false;
+    }
+
+    private void AssignCarrierDestination()
+    {
+        if (carrier.destinationBuilding == null)
+        {
+            carrier.destinationBuilding = nextInChain;
+        }
     }
 }

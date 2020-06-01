@@ -16,8 +16,9 @@ public class ProductionBuilding : Building
     protected float timeSinceLastPass = 0;
     public float passProgress = 0;
 
-    void Start()
+    protected virtual void Start()
     {
+        Debug.Log("Production BUildings");
         currentResources = (Resources)ScriptableObject.CreateInstance(typeof(Resources));
         CheckForNeighbouringBuildings();
     }

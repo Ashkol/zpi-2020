@@ -5,5 +5,5 @@ using UnityEngine;
 public class TransitionalProductionBuilding : ProductionBuilding
 {
     public Resources requiredResources;
-	
+    public Carrier carrier;
 }

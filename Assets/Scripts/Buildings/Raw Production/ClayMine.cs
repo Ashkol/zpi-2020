@@ -7,8 +7,15 @@ public class ClayMine : RawProductionBuilding
     [Header("Chain links")]
     public Brickyard nextInChain;
 	public Potter alternativeChain;
-	
-	void Update()
+    [SerializeField] private Carrier carrierAlt;
+
+    protected override void Start()
+    {
+        base.Start();
+        AssignCarrierDestination();
+    }
+
+    void Update()
     {
         if (timeSinceLastProduction == 0f && (nextInChain || alternativeChain))
             StartCoroutine(Produce());
@@ -31,11 +38,14 @@ public class ClayMine : RawProductionBuilding
 
     IEnumerator PassResources()
     {
+        carrier.MoveToDestination(passProductTime);
+        carrierAlt.MoveToDestination(passProductTime);
         currentResources -= producedResources;
         while (timeSinceLastPass < passProductTime)
         {
             timeSinceLastPass += Time.deltaTime;
             passProgress = timeSinceLastPass / passProductTime;
+
             yield return null;
         }
         timeSinceLastPass = 0f;
@@ -52,7 +62,7 @@ public class ClayMine : RawProductionBuilding
         {
             Debug.Log(">= 1");
             nextInChain = chainBuildings[0];
-            
+            AssignCarrierDestination();
         }
 
 		Debug.Log("Checks for Potter");
@@ -61,9 +71,26 @@ public class ClayMine : RawProductionBuilding
         {
             Debug.Log(">= 1");
             alternativeChain = chainBuildings2[0];
-            
+            AssignCarrierAlternativeDestination();
+
         }
 		
         return (nextInChain == null && chainBuildings.Count >= 1) || (alternativeChain == null && chainBuildings2.Count >= 1); 
+    }
+
+    private void AssignCarrierDestination()
+    {
+        if (carrier.destinationBuilding == null)
+        {
+            carrier.destinationBuilding = nextInChain;
+        }
+    }
+
+    private void AssignCarrierAlternativeDestination()
+    {
+        if (carrierAlt.destinationBuilding == null)
+        {
+            carrierAlt.destinationBuilding = alternativeChain;
+        }
     }
 }
