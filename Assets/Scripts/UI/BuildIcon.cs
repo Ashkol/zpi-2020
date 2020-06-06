@@ -11,11 +11,11 @@ public class BuildIcon : MonoBehaviour
     BuildPanel buildPanel;
 
 
-    void Awake()
+    void Start()
     {
         toggle = GetComponent<Toggle>();
         icon = GetComponent<Image>();
-        if (building.icon != null)
+         if (building.icon != null)
             icon.sprite = building.icon;
     }
 

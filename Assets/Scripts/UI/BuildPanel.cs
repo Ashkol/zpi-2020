@@ -13,7 +13,7 @@ public class BuildPanel : MonoBehaviour
     {
         instance = this;
         rectTransform = GetComponent<RectTransform>();
-        transform.localScale = new Vector3(0, 0, 0);
+        rectTransform.localScale = new Vector3(0, 0, 0);
     }
 
     public void Show(Tile tile)
@@ -27,6 +27,7 @@ public class BuildPanel : MonoBehaviour
 
     public void Hide()
     {
+
         LeanTween.scale(rectTransform, Vector3.zero, 0.5f);
         if (activeBuildingDescPanel != null)
             LeanTween.scale(activeBuildingDescPanel.gameObject, Vector3.zero, 0.3f).setDestroyOnComplete(true);

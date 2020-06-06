@@ -40,6 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7659610554604287371}
   - component: {fileID: 6563534410257836751}
+  - component: {fileID: 7867654807248195586}
   m_Layer: 0
   m_Name: Water Tile
   m_TagString: Untagged
@@ -80,6 +81,24 @@ MonoBehaviour:
   y: 0
   z: 0
   tileRadius: 5
+--- !u!114 &7867654807248195586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7437058768488728005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5689838c08f2c7541aa6fd9fcf63beae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingHolder: {fileID: 416745746342676793}
+  building: {fileID: 0}
+  natureHolder: {fileID: 1577211170171984641}
+  natureObject: {fileID: 0}
+  tileType: 3
+  neighbours: []
 --- !u!1 &7936342891291608939
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,10 +136,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7659610554604287371}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 600489f2040c3c04ba4f767953fe2c4e,
+    - target: {fileID: -6860895033569716450, guid: 600489f2040c3c04ba4f767953fe2c4e,
         type: 3}
-      propertyPath: m_Name
-      value: water_tile_prefab
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 600489f2040c3c04ba4f767953fe2c4e,
         type: 3}
@@ -176,6 +195,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 600489f2040c3c04ba4f767953fe2c4e,
+        type: 3}
+      propertyPath: m_Name
+      value: water_tile_prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 600489f2040c3c04ba4f767953fe2c4e, type: 3}
