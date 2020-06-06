@@ -95,7 +95,8 @@ MonoBehaviour:
   entrance: {fileID: 5820790942579303636}
   icon: {fileID: 21300000, guid: 769aad940486e8c4da3fa419d4b12387, type: 3}
   description: {fileID: 11400000, guid: b1f0f8e41da3d6a4d8a3bfc753912b49, type: 2}
-  buildResources: {fileID: 11400000, guid: b8927d68a81af4342b71ec4aa8465bdd, type: 2}
+  buildResources: {fileID: 11400000, guid: b3267f3cdaf9a014bade4c845207ebf6, type: 2}
+  buildingPanel: {fileID: 0}
   currentResources: {fileID: 0}
   producedResources: {fileID: 11400000, guid: 18ffcad00f5406d49a3e04a7088b430e, type: 2}
   productionTime: 10

@@ -13,8 +13,8 @@ public class Harbour : Building
 	private int richPopulation = 0;
 	
 	public int poorPopulationRequired = 100;
-	public int averagePopulationRequired = 100;
-	public int richPopulationRequired = 100;
+	public int averagePopulationRequired = 50;
+	public int richPopulationRequired = 25;
 	
     void Update()
     {

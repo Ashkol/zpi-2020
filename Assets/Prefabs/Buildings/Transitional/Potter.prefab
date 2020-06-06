@@ -138,9 +138,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tile: {fileID: 0}
   tileType: 0
+  entrance: {fileID: 0}
   icon: {fileID: 21300000, guid: 90d43c573f6b8924b9906a0e477a0aea, type: 3}
   description: {fileID: 11400000, guid: 645f4d75430ceaa43947555526d2e81d, type: 2}
-  buildResources: {fileID: 11400000, guid: b8927d68a81af4342b71ec4aa8465bdd, type: 2}
+  buildResources: {fileID: 11400000, guid: b3267f3cdaf9a014bade4c845207ebf6, type: 2}
+  buildingPanel: {fileID: 0}
   currentResources: {fileID: 0}
   producedResources: {fileID: 11400000, guid: 693d69a5928302047bd59e7f0f4d8f16, type: 2}
   productionTime: 10
@@ -148,5 +150,6 @@ MonoBehaviour:
   passProductTime: 5
   passProgress: 0
   requiredResources: {fileID: 11400000, guid: c167599c5bafcbe4fa4601023d325f29, type: 2}
+  carrier: {fileID: 0}
   nextInChain: {fileID: 0}
   prevInChain: []

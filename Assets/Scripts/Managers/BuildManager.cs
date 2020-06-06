@@ -13,6 +13,7 @@ public class BuildManager : MonoBehaviour
     [Header("Resources")]
     public Resources playerResources;
 
+	[Header("Prefabs to upgrading")]
 	public Building housePrefab;
 	public Building richHousePrefab;
 	

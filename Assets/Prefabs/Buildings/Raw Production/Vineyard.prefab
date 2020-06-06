@@ -46,15 +46,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tile: {fileID: 0}
   tileType: 0
+  entrance: {fileID: 0}
   icon: {fileID: 21300000, guid: 5f7fa9a7940a64e79b5a42d9f661d42c, type: 3}
   description: {fileID: 11400000, guid: 425fdf689d969d84496de28c9d508022, type: 2}
-  buildResources: {fileID: 11400000, guid: b8927d68a81af4342b71ec4aa8465bdd, type: 2}
+  buildResources: {fileID: 11400000, guid: 9249efc87881bb94e97efb17909ea4ab, type: 2}
+  buildingPanel: {fileID: 0}
   currentResources: {fileID: 0}
   producedResources: {fileID: 11400000, guid: b64cdcd73623873449e60c535647744c, type: 2}
   productionTime: 5
   productionProgress: 0
   passProductTime: 5
   passProgress: 0
+  carrier: {fileID: 0}
   nextInChain: {fileID: 0}
 --- !u!1 &6446095712865392697
 GameObject:
