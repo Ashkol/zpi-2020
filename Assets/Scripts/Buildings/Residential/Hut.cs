@@ -34,4 +34,18 @@ public class Hut : ResidentialBuilding
 			timeFromLastGain -= Time.deltaTime;
 		}
    }	
+   
+   //enable or not "update" button
+   private bool updateConditionsMet()
+   {
+		foreach(DistributionBuilding db in prevInChain)
+		{
+			if(((db.getResources().fish > 0 && db.getResources().bread > 0) || 
+					(db.getResources().fish > 0 && db.getResources().wieners > 0) || 
+						(db.getResources().bread > 0 && db.getResources().wieners > 0)) && 
+							(db.getResources().clothes > 0 || db.getResources().pottery > 0)) return true;
+		}
+		
+		return false;
+   }
 }
