@@ -18,7 +18,7 @@ public class Harbour : Building
 	
     void Update()
     {
-        //countPeople();
+        //countPeople(); //should be here if population count is displayed
     }
 	
 	public static void AddToPool(Hut toAdd)

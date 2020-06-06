@@ -13,6 +13,9 @@ public class BuildManager : MonoBehaviour
     [Header("Resources")]
     public Resources playerResources;
 
+	public Building housePrefab;
+	public Building richHousePrefab;
+	
     void Awake()
     {
         instance = this;
@@ -80,4 +83,34 @@ public class BuildManager : MonoBehaviour
         }
         
     }
+	
+	public void updateToHouse(Tile tile){
+		
+	   if (housePrefab != null)
+        {
+            if (playerResources >= buildingToBuild.buildResources)
+            {
+                playerResources -= buildingToBuild.buildResources;
+                Building newBuilding = Instantiate(housePrefab, tile.buildingHolder);
+                tile.Building = newBuilding;
+                newBuilding.tile = tile;
+                
+            }
+        }
+	}
+	
+	public void updateToRichHouse(Tile tile){
+		
+		if (richHousePrefab != null)
+        {
+            if (playerResources >= buildingToBuild.buildResources)
+            {
+                playerResources -= buildingToBuild.buildResources;
+                Building newBuilding = Instantiate(richHousePrefab, tile.buildingHolder);
+                tile.Building = newBuilding;
+                newBuilding.tile = tile;
+                
+            }
+        }
+	}
 }
