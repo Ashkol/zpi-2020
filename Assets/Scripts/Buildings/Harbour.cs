@@ -13,12 +13,12 @@ public class Harbour : Building
 	private int richPopulation = 0;
 	
 	public int poorPopulationRequired = 100;
-	public int averagePopulationRequired = 100;
-	public int richPopulationRequired = 100;
+	public int averagePopulationRequired = 50;
+	public int richPopulationRequired = 25;
 	
     void Update()
     {
-        //countPeople();
+        //countPeople(); //should be here if population count is displayed
     }
 	
 	public static void AddToPool(Hut toAdd)
