@@ -53,7 +53,8 @@ public class Building : MonoBehaviour
     {
         Normal,
         Residential,
-        Production
+        Production,
+		Harbour
     }
 	
 	public BuildingType getBuildingType(){

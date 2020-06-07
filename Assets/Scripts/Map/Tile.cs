@@ -63,6 +63,11 @@ public class Tile : MonoBehaviour, IPointerClickHandler
 				ProductionBuildingPanel.instance.Open();
 				ProductionBuildingPanel.instance.Building = building;
 			}
+			else if(building.getBuildingType() == Building.BuildingType.Harbour)
+			{
+				HarbourBuildingPanel.instance.Open();
+				HarbourBuildingPanel.instance.Building = building;
+			}
         }
 
     }
