@@ -45,4 +45,16 @@ public class RichHouse : ResidentialBuilding
 			timeFromLastGain -= Time.deltaTime;
 		}
    }	
+   
+   //enable or not "update" button
+   public override bool updateConditionsMet()
+   {
+	   return false; //cannot update
+   }
+   
+   //attach to "update" button
+	public override void updateToBetterHouse(){
+	   
+	   //it is actually the best
+	}  
 }

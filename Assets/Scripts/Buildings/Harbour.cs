@@ -16,10 +16,6 @@ public class Harbour : Building
 	public int averagePopulationRequired = 50;
 	public int richPopulationRequired = 25;
 	
-    void Update()
-    {
-        //countPeople(); //should be here if population count is displayed
-    }
 	
 	public static void AddToPool(Hut toAdd)
 	{
@@ -72,5 +68,11 @@ public class Harbour : Building
 	public void win()
 	{
 		//victorious things happen
+	}
+	
+	public string getResidents()
+	{
+		countPeople();
+		return "Serfs :" + poorPopulation + "\nBurghers: " + averagePopulation + "\nBourgeoisie: " + richPopulation;
 	}
 }

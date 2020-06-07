@@ -45,7 +45,7 @@ public class House : ResidentialBuilding
    }	
    
    //enable or not "update" button
-   public bool updateConditionsMet()
+   public override bool updateConditionsMet()
    {
 		bool aa = false, ab = false, ac = false;
 		
@@ -67,7 +67,7 @@ public class House : ResidentialBuilding
    }
    
 	//attach to "update" button
-	public void updateToRichHouse(){
+	public override void updateToBetterHouse(){
 	   
 	   BuildManager.instance.updateToRichHouse(tile);
         

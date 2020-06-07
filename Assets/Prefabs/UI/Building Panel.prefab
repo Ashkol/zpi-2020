@@ -319,7 +319,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   header: {fileID: 5874819069078656746}
   description: {fileID: 764316335407121129}
-  building: {fileID: 0}
 --- !u!1 &4588793982777060668
 GameObject:
   m_ObjectHideFlags: 0

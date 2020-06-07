@@ -48,4 +48,16 @@ public class Building : MonoBehaviour
         Debug.Log("Checks not really");
         return false;
     }
+	
+	public enum BuildingType
+    {
+        Normal,
+        Residential,
+        Production,
+		Harbour
+    }
+	
+	public BuildingType getBuildingType(){
+		return BuildingType.Normal;
+	}
 }
