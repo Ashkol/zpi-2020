@@ -66,4 +66,18 @@ public class ResidentialBuilding : Building
 	
 		return residentsNumber;
 	}
+	
+	public virtual bool updateConditionsMet()
+	{
+		return false;
+	}
+	
+	public virtual void updateToBetterHouse()
+	{
+		
+	}
+	
+	public new BuildingType getBuildingType(){
+		return BuildingType.Residential;
+	}
 }

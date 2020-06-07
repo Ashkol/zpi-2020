@@ -113,7 +113,7 @@ MonoBehaviour:
   building: {fileID: 0}
   natureHolder: {fileID: 1577211170171984641}
   natureObject: {fileID: 0}
-  tileType: 0
+  tileType: 2
   neighbours: []
 --- !u!1 &7936342891291608939
 GameObject:

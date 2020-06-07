@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 public class BuildingPanel : MonoBehaviour
 {
-    Building building;
+    private Building building;
     RectTransform rectTransform;
 
     public Building Building

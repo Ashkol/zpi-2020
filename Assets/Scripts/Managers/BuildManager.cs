@@ -70,6 +70,7 @@ public class BuildManager : MonoBehaviour
             Destroy(tileToBuildOn.Building.gameObject);
             //BuildPanel.instance.gameObject.SetActive(false);
             BuildPanel.instance.Hide();
+			BuildingPanel.instance.Close();
         }
     }
 
@@ -114,4 +115,5 @@ public class BuildManager : MonoBehaviour
             }
         }
 	}
+	
 }

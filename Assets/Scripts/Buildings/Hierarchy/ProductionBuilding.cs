@@ -22,5 +22,9 @@ public class ProductionBuilding : Building
         currentResources = (Resources)ScriptableObject.CreateInstance(typeof(Resources));
         CheckForNeighbouringBuildings();
     }
+	
+	public new BuildingType getBuildingType(){
+		return BuildingType.Production;
+	}
 
 }
