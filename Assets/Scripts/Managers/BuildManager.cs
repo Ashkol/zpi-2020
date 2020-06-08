@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BuildManager : MonoBehaviour
 {
+	public GameObject floatingPoint;//give here Floating Point prefab
+	
     [Header("Building")]
     public static BuildManager instance;
     public List<Building> buildingPrefabs;
@@ -16,6 +18,8 @@ public class BuildManager : MonoBehaviour
 	[Header("Prefabs to upgrading")]
 	public Building housePrefab;
 	public Building richHousePrefab;
+	
+	
 	
     void Awake()
     {

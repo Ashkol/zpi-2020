@@ -6,7 +6,8 @@ public class Building : MonoBehaviour
 {
     public Tile tile;
     public Tile.TileType tileType;
-
+	
+	
     [Header("Surrounding")]
     [SerializeField] private Transform entrance;
     public Transform Entrance { private set { entrance = value; }  get { return entrance; } }
@@ -59,5 +60,10 @@ public class Building : MonoBehaviour
 	
 	public BuildingType getBuildingType(){
 		return BuildingType.Normal;
+	}
+	
+	protected void showFloatingPoint(){
+		
+		Instantiate(BuildManager.instance.floatingPoint, transform.position, Quaternion.identity, transform);
 	}
 }

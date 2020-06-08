@@ -15,6 +15,7 @@ public class ResidentialBuilding : Building
 		if(residentsNumber < rasidentsMax)
 		{
 			residentsNumber++;
+			showFloatingPoint();
 			timeFromLastGain = timeToGain;
 		}
 	}
