@@ -73,6 +73,8 @@ public class Harbour : Building
 	public string getResidents()
 	{
 		countPeople();
-		return "Serfs :" + poorPopulation + "\nBurghers: " + averagePopulation + "\nBourgeoisie: " + richPopulation;
+		return "Serfs :" + poorPopulation + " out of " + poorPopulationRequired +
+		"\nBurghers: " + averagePopulation + " out of " + averagePopulationRequired +
+		"\nBourgeoisie: " + richPopulation + " out of " + richPopulationRequired;
 	}
 }
