@@ -32,6 +32,7 @@ public class WooodcutterHut : RawProductionBuilding
         timeSinceLastProduction = 0f;
         productionProgress = timeSinceLastProduction / productionTime;
         currentResources += producedResources;
+		showFloatingPoint();
     }
 
     IEnumerator PassResources()

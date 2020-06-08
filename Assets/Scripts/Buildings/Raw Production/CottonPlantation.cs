@@ -26,6 +26,7 @@ public class CottonPlantation : RawProductionBuilding
         timeSinceLastProduction = 0f;
         productionProgress = timeSinceLastProduction / productionTime;
         currentResources += producedResources;
+		showFloatingPoint();
     }
 	
 	IEnumerator PassResources()

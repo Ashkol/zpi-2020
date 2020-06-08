@@ -34,6 +34,7 @@ public class ClayMine : RawProductionBuilding
         timeSinceLastProduction = 0f;
         productionProgress = timeSinceLastProduction / productionTime;
         currentResources += producedResources;
+		showFloatingPoint();
     }
 
     IEnumerator PassResources()
