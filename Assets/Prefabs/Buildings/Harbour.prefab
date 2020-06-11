@@ -46,9 +46,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tile: {fileID: 0}
   tileType: 3
+  entrance: {fileID: 0}
   icon: {fileID: 21300000, guid: f8a7b241c49e253408c01905e688ff59, type: 3}
   description: {fileID: 11400000, guid: 55dea1985d6bc9c4c861c9f1baf3fd38, type: 2}
   buildResources: {fileID: 11400000, guid: 9249efc87881bb94e97efb17909ea4ab, type: 2}
+  buildingPanel: {fileID: 0}
+  poorPopulationRequired: 100
+  averagePopulationRequired: 50
+  richPopulationRequired: 25
+  victoryPanel: {fileID: 5151382942189913468, guid: ec05bb6f73e69b440be631eff28e6871,
+    type: 3}
 --- !u!1001 &2274423468427131653
 PrefabInstance:
   m_ObjectHideFlags: 0

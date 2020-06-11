@@ -16,6 +16,7 @@ public class Harbour : Building
 	public int averagePopulationRequired = 50;
 	public int richPopulationRequired = 25;
 	
+	public GameObject victoryPanel;
 	
 	public static void AddToPool(Hut toAdd)
 	{
@@ -68,6 +69,7 @@ public class Harbour : Building
 	public void win()
 	{
 		//victorious things happen
+		Instantiate(victoryPanel);
 	}
 	
 	public string getResidents()
