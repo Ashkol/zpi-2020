@@ -14,9 +14,10 @@ public class VictoryPanel : MonoBehaviour
     }
     void Update()
     {
-        if(Input.anyKey)
+        if(Input.anyKeyDown)
 		{
 			gameManager.LoadScene((int)SceneIndexes.MAIN_MENU);
+            DestroyImmediate(gameObject);
 		}
     }
 }

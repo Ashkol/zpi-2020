@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class ResidentialBuildingPanel : BuildingPanel
 {
     private ResidentialBuilding building;
+	public new static ResidentialBuildingPanel instance;
 
 	public new ResidentialBuilding Building
     {
@@ -22,6 +23,7 @@ public class ResidentialBuildingPanel : BuildingPanel
     protected override void Start()
     {
         base.Start();
+		instance = this;
     }
 
 	public TextMeshProUGUI bodyCount;
@@ -31,11 +33,15 @@ public class ResidentialBuildingPanel : BuildingPanel
 	
 	void Update()
 	{
-		bodyCount.text = "Residents number: " + building.getResidents();
-		if(building.updateConditionsMet() && !updateButton.activeSelf) updateButton.SetActive(true);
-		else if(!building.updateConditionsMet() && updateButton.activeSelf) updateButton.SetActive(false);
-		
-		getCurrentFill();
+		if (building != null)
+		{
+			bodyCount.text = "Residents number: " + building.getResidents();
+			if (building.updateConditionsMet() && !updateButton.activeSelf) updateButton.SetActive(true);
+			else if (!building.updateConditionsMet() && updateButton.activeSelf) updateButton.SetActive(false);
+
+			getCurrentFill();
+		}
+
 	}
 	
 	public void upgrade(){
@@ -49,7 +55,7 @@ public class ResidentialBuildingPanel : BuildingPanel
 		
 		RectTransform rt = fill.GetComponent<RectTransform>();
 		rt.localScale = new Vector3(fillAmount, 1, 1);
-		
+
 		fill.color = color;
 	}
 }

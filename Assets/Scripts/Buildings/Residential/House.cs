@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class House : ResidentialBuilding
 {
-	void Start()
+	protected override void Start()
 	{
+		base.Start();
 		Harbour.AddToPool(this);
 	}
-	
-   private bool conditionsMet()
+
+	private bool conditionsMet()
    {
 		bool aa = false, ab = false, ac = false;
 		
@@ -24,8 +25,9 @@ public class House : ResidentialBuilding
 			if(db.getResources().clothes > 0 || db.getResources().pottery > 0) b = true;
 			if(db.getResources().vodka > 0 || db.getResources().wine > 0) c = true;
 		}
-		
-		return ((aa && ab) || (aa && ac) || (ab && ac)) && b && c;
+
+		//return ((aa && ab) || (aa && ac) || (ab && ac)) && b && c;
+		return (aa || ac) && c;
    }
    
    void Update()

@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class RichHouse : ResidentialBuilding
 {
-	void Start()
+	protected override void Start()
 	{
+		base.Start();
 		Harbour.AddToPool(this);
 	}
-	
-    private bool conditionsMet()
+
+	private bool conditionsMet()
    {
 	   bool aa = false, ab = false, ac = false;
 		

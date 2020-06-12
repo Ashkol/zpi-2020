@@ -17,7 +17,12 @@ public class Harbour : Building
 	public int richPopulationRequired = 25;
 	
 	public GameObject victoryPanel;
-	
+
+	private void Start()
+	{
+		buildingType = BuildingType.Harbour;
+	}
+
 	public static void AddToPool(Hut toAdd)
 	{
 		hutList.Add(toAdd);
@@ -69,7 +74,9 @@ public class Harbour : Building
 	public void win()
 	{
 		//victorious things happen
-		Instantiate(victoryPanel);
+		Instantiate(victoryPanel, FindObjectOfType<Canvas>().transform);
+		HarbourBuildingPanel.instance.Close();
+
 	}
 	
 	public string getResidents()

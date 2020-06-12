@@ -5,6 +5,7 @@ using TMPro;
 public class HarbourBuildingPanel : BuildingPanel
 {
     private Harbour building;
+	public new static HarbourBuildingPanel instance;
 
 	public new Harbour Building
     {
@@ -20,6 +21,7 @@ public class HarbourBuildingPanel : BuildingPanel
     protected override void Start()
     {
         base.Start();
+		instance = this;
     }
 
 	public TextMeshProUGUI bodyCount;
@@ -27,9 +29,13 @@ public class HarbourBuildingPanel : BuildingPanel
 	
 	void Update()
 	{
-		bodyCount.text = building.getResidents();
-		if(building.winConditionsMet() && !winButton.activeSelf) winButton.SetActive(true);
-		else if(!building.winConditionsMet() && winButton.activeSelf) winButton.SetActive(false);
+		if (building != null)
+		{
+			bodyCount.text = building.getResidents();
+			if (building.winConditionsMet() && !winButton.activeSelf) winButton.SetActive(true);
+			else if (!building.winConditionsMet() && winButton.activeSelf) winButton.SetActive(false);
+		}
+
 	}
 	
 	public void win(){

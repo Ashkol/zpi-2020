@@ -322,6 +322,8 @@ MonoBehaviour:
   description: {fileID: 764316335407121129}
   bodyCount: {fileID: 1313204585886156564}
   updateButton: {fileID: 6729043004419699954}
+  fill: {fileID: 6798481271934126919}
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &3071596933442130309
 GameObject:
   m_ObjectHideFlags: 0

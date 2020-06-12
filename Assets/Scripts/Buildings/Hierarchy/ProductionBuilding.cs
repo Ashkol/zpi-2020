@@ -18,13 +18,14 @@ public class ProductionBuilding : Building
 
     protected virtual void Start()
     {
-        Debug.Log("Production BUildings");
+        Debug.Log("Production Buildings");
+        buildingType = BuildingType.Production;
         currentResources = (Resources)ScriptableObject.CreateInstance(typeof(Resources));
         CheckForNeighbouringBuildings();
     }
 	
-	public new BuildingType getBuildingType(){
-		return BuildingType.Production;
-	}
+	//public override BuildingType getBuildingType(){
+	//	return BuildingType.Production;
+	//}
 
 }

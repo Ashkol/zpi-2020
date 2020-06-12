@@ -15,10 +15,7 @@ public class Tile : MonoBehaviour, IPointerClickHandler
         }
         set
         {
-            if (building == null)
-            {
-                building = value;
-            }
+            building = value;
         }
     }
     public Transform natureHolder;
@@ -56,17 +53,17 @@ public class Tile : MonoBehaviour, IPointerClickHandler
 			else if(building.getBuildingType() == Building.BuildingType.Residential)
 			{
 				ResidentialBuildingPanel.instance.Open();
-				ResidentialBuildingPanel.instance.Building = building;
+				ResidentialBuildingPanel.instance.Building = (ResidentialBuilding)building;
 			}
 			else if(building.getBuildingType() == Building.BuildingType.Production)
 			{
 				ProductionBuildingPanel.instance.Open();
-				ProductionBuildingPanel.instance.Building = building;
+				ProductionBuildingPanel.instance.Building = (ProductionBuilding)building;
 			}
 			else if(building.getBuildingType() == Building.BuildingType.Harbour)
 			{
 				HarbourBuildingPanel.instance.Open();
-				HarbourBuildingPanel.instance.Building = building;
+				HarbourBuildingPanel.instance.Building = (Harbour)building;
 			}
         }
 

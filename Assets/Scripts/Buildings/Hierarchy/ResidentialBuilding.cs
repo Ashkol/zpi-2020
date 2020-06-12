@@ -9,7 +9,13 @@ public class ResidentialBuilding : Building
 	protected float timeFromLastGain = 0f;
 	public float timeToGain = 5f;
 	public List<DistributionBuilding> prevInChain = new List<DistributionBuilding>();
-	
+
+	protected virtual void Start()
+	{
+		buildingType = BuildingType.Residential;
+		CheckForNeighbouringBuildings();
+	}
+
 	protected void gainResidents()
 	{
 		if(residentsNumber < rasidentsMax)
@@ -29,7 +35,8 @@ public class ResidentialBuilding : Building
 	public override bool CheckForNeighbouringBuildings()
     {
         
-        prevInChain = GetNeighbouringBuildingsFurther<DistributionBuilding>();
+        //prevInChain = GetNeighbouringBuildingsFurther<DistributionBuilding>();
+        prevInChain = GetNeighbouringBuildings<DistributionBuilding>();
 
 
         return prevInChain.Count > 0;

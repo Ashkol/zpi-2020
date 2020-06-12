@@ -17,10 +17,14 @@ public class Building : MonoBehaviour
     public BuildingDescription description;
     public Resources buildResources;
     [SerializeField] BuildingPanel buildingPanel;
+    [SerializeField] protected BuildingType buildingType;
 
-    void Start()
+
+
+    protected virtual void Start()
     {
-        foreach(Building neighbour in GetNeighbouringBuildings<Building>())
+        buildingType = BuildingType.Normal;
+        foreach (Building neighbour in GetNeighbouringBuildings<Building>())
         {
             neighbour.CheckForNeighbouringBuildings();
         }
@@ -59,7 +63,7 @@ public class Building : MonoBehaviour
     }
 	
 	public BuildingType getBuildingType(){
-		return BuildingType.Normal;
+        return buildingType;
 	}
 	
 	protected void showFloatingPoint(){

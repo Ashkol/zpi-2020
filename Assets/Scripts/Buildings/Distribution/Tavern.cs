@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Tavern : DistributionBuilding
 {
-	void Start()
+	protected override void Start()
     {
+		base.Start();
         resourcesOnMarket = (Resources)ScriptableObject.CreateInstance(typeof(Resources));
 		lastResources = (Resources)ScriptableObject.CreateInstance(typeof(Resources));
     }

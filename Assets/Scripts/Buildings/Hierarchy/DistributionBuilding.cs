@@ -9,7 +9,12 @@ public class DistributionBuilding : Building
 	
 	public float timeToReset = 10f;
 	protected float timeFromLastCheck = 0f;
-	
+
+	protected override void Start()
+	{
+		base.Start();
+	}
+
 	public void AddResourcess(Resources newResources)
 	{
 		resourcesOnMarket += newResources;

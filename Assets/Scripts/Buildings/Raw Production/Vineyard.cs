@@ -5,7 +5,8 @@ using UnityEngine;
 public class Vineyard : RawProductionBuilding
 {
     [Header("Chain links")]
-    public Storehouse nextInChain;
+    //public Storehouse nextInChain;
+    public Tavern nextInChain;
 	
 	void Update()
     {
@@ -47,7 +48,8 @@ public class Vineyard : RawProductionBuilding
     public override bool CheckForNeighbouringBuildings()
     {
         Debug.Log("Checks for Storehouse");
-        List<Storehouse> chainBuildings = GetNeighbouringBuildings<Storehouse>();
+        //List<Storehouse> chainBuildings = GetNeighbouringBuildings<Storehouse>();
+        List<Tavern> chainBuildings = GetNeighbouringBuildings<Tavern>();
         if (nextInChain == null && chainBuildings.Count >= 1)
         {
             Debug.Log(">= 1");

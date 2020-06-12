@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class ProductionBuildingPanel : BuildingPanel
 {
     private ProductionBuilding building;
+	public new static ProductionBuildingPanel instance;
 
 	public new ProductionBuilding Building
     {
@@ -25,11 +26,16 @@ public class ProductionBuildingPanel : BuildingPanel
     protected override void Start()
     {
         base.Start();
+		instance = this;
     }
 	
 	void Update(){
 		
-		getCurrentFill();
+		if (building != null)
+		{
+			getCurrentFill();
+		}
+
 	}
 	
 	void getCurrentFill(){
