@@ -5,8 +5,9 @@ using UnityEngine;
 public class Market : DistributionBuilding
 {	
 
-	void Start()
+	protected override void Start()
     {
+		base.Start();
         resourcesOnMarket = (Resources)ScriptableObject.CreateInstance(typeof(Resources));
 		lastResources = (Resources)ScriptableObject.CreateInstance(typeof(Resources));
     }

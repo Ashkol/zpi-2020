@@ -79,6 +79,7 @@ public class Tile : MonoBehaviour, IPointerClickHandler
                 neighbours.Add(tile);
             }
         }
+        Debug.Log($"Neighbours {neighbours.Count}");
     }
 
     private bool isNeigbour(Tile tile)

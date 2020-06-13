@@ -37,7 +37,10 @@ public class WooodcutterHut : RawProductionBuilding
 
     IEnumerator PassResources()
     {
-        carrier.MoveToDestination(passProductTime);
+        if (carrier != null)
+        {
+            carrier.MoveToDestination(passProductTime);
+        }
         currentResources -= producedResources;
         while (timeSinceLastPass < passProductTime)
         {
@@ -67,9 +70,12 @@ public class WooodcutterHut : RawProductionBuilding
 
     private void AssignCarrierDestination()
     {
-        if (carrier.destinationBuilding == null)
+        if (carrier != null)
         {
-            carrier.destinationBuilding = nextInChain;
+            if (carrier.destinationBuilding == null)
+            {
+                carrier.destinationBuilding = nextInChain;
+            }
         }
     }
 }

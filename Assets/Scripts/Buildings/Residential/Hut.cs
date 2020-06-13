@@ -14,7 +14,11 @@ public class Hut : ResidentialBuilding
 	{
 		foreach(DistributionBuilding db in prevInChain)
 		{
-			if(db.getResources().fish > 0 || db.getResources().bread > 0 || db.getResources().wieners > 0) return true;
+			var resources = db.getResources();
+			if (resources != null)
+			{
+				if (resources.fish > 0 || resources.bread > 0 || resources.wieners > 0) return true;
+			}
 		}
 		
 		return false;

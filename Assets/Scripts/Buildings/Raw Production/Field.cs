@@ -40,10 +40,17 @@ public class Field : RawProductionBuilding
 
     IEnumerator PassResources()
     {
-        if (carrier.destinationBuilding != null)
-            carrier.MoveToDestination(passProductTime);
-        if (carrierAlt.destinationBuilding != null)
-            carrierAlt.MoveToDestination(passProductTime);
+        if (carrier != null)
+        {
+            if (carrier.destinationBuilding != null)
+                carrier.MoveToDestination(passProductTime);
+        }
+        if (carrierAlt != null)
+        {
+            if (carrierAlt.destinationBuilding != null)
+                carrierAlt.MoveToDestination(passProductTime);
+        }
+
         currentResources -= producedResources;
         while (timeSinceLastPass < passProductTime)
         {
@@ -84,17 +91,24 @@ public class Field : RawProductionBuilding
 
     private void AssignCarrierDestination()
     {
-        if (carrier.destinationBuilding == null)
+        if (carrier != null)
         {
-            carrier.destinationBuilding = nextInChain;
+            if (carrier.destinationBuilding == null)
+            {
+                carrier.destinationBuilding = nextInChain;
+            }
         }
     }
 
     private void AssignCarrierAlternativeDestination()
     {
-        if (carrierAlt.destinationBuilding == null)
+        if (carrierAlt != null)
         {
-            carrierAlt.destinationBuilding = alternativeChain;
+            if (carrierAlt.destinationBuilding == null)
+            {
+                carrierAlt.destinationBuilding = alternativeChain;
+            }
         }
+
     }
 }

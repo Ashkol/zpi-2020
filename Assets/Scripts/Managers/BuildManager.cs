@@ -94,7 +94,7 @@ public class BuildManager : MonoBehaviour
 		
 	   if (housePrefab != null)
         {
-            if (playerResources >= buildingToBuild.buildResources)
+            if (playerResources >= housePrefab.buildResources)
             {
                 playerResources -= buildingToBuild.buildResources;
                 Building newBuilding = Instantiate(housePrefab, tile.buildingHolder);

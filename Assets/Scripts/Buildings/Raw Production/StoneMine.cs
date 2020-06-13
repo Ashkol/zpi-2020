@@ -36,7 +36,10 @@ public class StoneMine : RawProductionBuilding
 
     IEnumerator PassResources()
     {
-        carrier.MoveToDestination(passProductTime);
+        if (carrier != null)
+        {
+            carrier.MoveToDestination(passProductTime);
+        }
         Debug.Log("Passing resources stone mine -> storehouse");
         currentResources -= producedResources;
         while (timeSinceLastPass < passProductTime)
@@ -67,9 +70,13 @@ public class StoneMine : RawProductionBuilding
 
     private void AssignCarrierDestination()
     {
-        if (carrier.destinationBuilding == null)
+        if (carrier != null)
         {
-            carrier.destinationBuilding = nextInChain;
+            if (carrier.destinationBuilding == null)
+            {
+                carrier.destinationBuilding = nextInChain;
+            }
         }
+
     }
 }

@@ -43,7 +43,11 @@ public class Baker : TransitionalProductionBuilding
 
     IEnumerator PassResources()
     {
-        carrier.MoveToDestination(passProductTime);
+        if (carrier != null)
+        {
+            carrier.MoveToDestination(passProductTime);
+        }
+
         Debug.Log("Passing resources baker -> market");
         currentResources -= producedResources;
         while (timeSinceLastPass < passProductTime)
@@ -81,9 +85,12 @@ public class Baker : TransitionalProductionBuilding
     }
     private void AssignCarrierDestination()
     {
-        if (carrier.destinationBuilding == null)
+        if (carrier != null)
         {
-            carrier.destinationBuilding = nextInChain;
+            if (carrier.destinationBuilding == null)
+            {
+                carrier.destinationBuilding = nextInChain;
+            }
         }
     }
 

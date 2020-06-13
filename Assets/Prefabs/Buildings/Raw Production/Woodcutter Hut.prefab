@@ -83,14 +83,16 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: feeb83472a7dab4439f69cd849046bad, type: 3}
   description: {fileID: 11400000, guid: dbd83a00586593747ad2e166589eb866, type: 2}
   buildResources: {fileID: 11400000, guid: b8927d68a81af4342b71ec4aa8465bdd, type: 2}
+  buildingPanel: {fileID: 0}
+  buildingType: 0
   currentResources: {fileID: 0}
   producedResources: {fileID: 11400000, guid: 775d2632d7d099841b83b354608d244d, type: 2}
   productionTime: 5
   productionProgress: 0
   passProductTime: 5
   passProgress: 0
+  carrier: {fileID: 0}
   nextInChain: {fileID: 0}
-  carrier: {fileID: 5275924785074621910}
 --- !u!208 &8906170881419555985
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -249,6 +251,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Carrier
       objectReference: {fileID: 0}
+    - target: {fileID: 6487617641888311022, guid: 8e150bd0684154744b95da2b537670e9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e150bd0684154744b95da2b537670e9, type: 3}
 --- !u!4 &6002522373006318411 stripped
@@ -257,15 +264,3 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5797349966252522161}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5275924785074621910 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1820451196009707367, guid: 8e150bd0684154744b95da2b537670e9,
-    type: 3}
-  m_PrefabInstance: {fileID: 5797349966252522161}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbf552fef369ed84c98d3d4d8df818da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

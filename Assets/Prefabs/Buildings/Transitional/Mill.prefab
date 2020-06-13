@@ -97,6 +97,7 @@ MonoBehaviour:
   description: {fileID: 11400000, guid: b1f0f8e41da3d6a4d8a3bfc753912b49, type: 2}
   buildResources: {fileID: 11400000, guid: b3267f3cdaf9a014bade4c845207ebf6, type: 2}
   buildingPanel: {fileID: 0}
+  buildingType: 0
   currentResources: {fileID: 0}
   producedResources: {fileID: 11400000, guid: 18ffcad00f5406d49a3e04a7088b430e, type: 2}
   productionTime: 10
@@ -104,7 +105,7 @@ MonoBehaviour:
   passProductTime: 5
   passProgress: 0
   requiredResources: {fileID: 11400000, guid: 4d4317f6391e397479dbfe64c1e8509a, type: 2}
-  carrier: {fileID: 3198049057992677000}
+  carrier: {fileID: 0}
   nextInChain: {fileID: 0}
   prevInChain: []
 --- !u!1001 &68775718163827934
@@ -249,6 +250,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Carrier
       objectReference: {fileID: 0}
+    - target: {fileID: 6487617641888311022, guid: 8e150bd0684154744b95da2b537670e9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e150bd0684154744b95da2b537670e9, type: 3}
 --- !u!4 &3898753078257516565 stripped
@@ -257,18 +263,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3828704113831109103}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3198049057992677000 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1820451196009707367, guid: 8e150bd0684154744b95da2b537670e9,
-    type: 3}
-  m_PrefabInstance: {fileID: 3828704113831109103}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbf552fef369ed84c98d3d4d8df818da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &8855283622543902093
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -19,11 +19,15 @@ public class House : ResidentialBuilding
 	   
 		foreach(DistributionBuilding db in prevInChain)
 		{
-			if(db.getResources().fish > 0) aa = true;
-			if(db.getResources().wieners > 0) ab = true;
-			if(db.getResources().bread > 0) ac = true;
-			if(db.getResources().clothes > 0 || db.getResources().pottery > 0) b = true;
-			if(db.getResources().vodka > 0 || db.getResources().wine > 0) c = true;
+			var resources = db.getResources();
+			if (resources != null)
+			{
+				if (resources.fish > 0) aa = true;
+				if (resources.wieners > 0) ab = true;
+				if (resources.bread > 0) ac = true;
+				if (resources.clothes > 0 || db.getResources().pottery > 0) b = true;
+				if (resources.vodka > 0 || db.getResources().wine > 0) c = true;
+			}
 		}
 
 		//return ((aa && ab) || (aa && ac) || (ab && ac)) && b && c;

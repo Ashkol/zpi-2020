@@ -29,7 +29,7 @@ public class Sawmill : TransitionalProductionBuilding
 
     IEnumerator Produce()
     {
-        carrier.MoveToDestination(passProductTime);
+        
         currentResources -= requiredResources;
         while (timeSinceLastProduction < productionTime)
         {
@@ -45,6 +45,10 @@ public class Sawmill : TransitionalProductionBuilding
 
     IEnumerator PassResources()
     {
+        if (carrier != null)
+        {
+            carrier.MoveToDestination(passProductTime);
+        }
         Debug.Log("Passing resources sawmill -> storehouse");
         currentResources -= producedResources;
         while (timeSinceLastPass < passProductTime)
@@ -83,9 +87,12 @@ public class Sawmill : TransitionalProductionBuilding
 
     private void AssignCarrierDestination()
     {
-        if (carrier.destinationBuilding == null)
+        if (carrier != null)
         {
-            carrier.destinationBuilding = nextInChain;
+            if (carrier.destinationBuilding == null)
+            {
+                carrier.destinationBuilding = nextInChain;
+            }
         }
     }
 }

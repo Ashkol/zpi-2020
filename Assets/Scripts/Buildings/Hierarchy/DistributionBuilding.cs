@@ -10,9 +10,17 @@ public class DistributionBuilding : Building
 	public float timeToReset = 10f;
 	protected float timeFromLastCheck = 0f;
 
-	protected override void Start()
+	protected new virtual void Start()
 	{
-		base.Start();
+		buildingType = BuildingType.Normal;
+		var bb = GetNeighbouringBuildings<Building>();
+		foreach (Building neighbour in bb)
+		{
+			neighbour.CheckForNeighbouringBuildings();
+		}
+		// It is also created in children, but then it throws null in game - not sure why 
+		// TO DO check why
+		resourcesOnMarket = (Resources)ScriptableObject.CreateInstance(typeof(Resources));
 	}
 
 	public void AddResourcess(Resources newResources)
